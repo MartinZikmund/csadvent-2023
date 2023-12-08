@@ -1,0 +1,10 @@
+{
+	"profiles": {
+		"ChristmasCountdown.Windows (Unpackaged)": {
+			"commandName": "Project"
+		},
+		"ChristmasCountdown.Windows (Package)": {
+			"commandName": "MsixPackage"
+		}
+	}
+}

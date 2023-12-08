@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "ChristmasCountdown",
+  "display": "standalone",
+  "name": "ChristmasCountdown",
+  "short_name": "ChristmasCountdown",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
