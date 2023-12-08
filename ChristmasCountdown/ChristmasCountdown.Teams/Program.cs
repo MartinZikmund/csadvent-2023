@@ -1,4 +1,5 @@
 using ChristmasCountdown.Teams.Interop.TeamsSDK;
+using Uno.Wasm.Bootstrap.Server;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,15 +27,20 @@ else
 
 app.UseStaticFiles();
 
+
+app.UseUnoFrameworkFiles();
+app.MapFallbackToFile("index.html");
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
+
+
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapBlazorHub();
-    endpoints.MapFallbackToPage("/_Host");
+    //endpoints.MapBlazorHub();
+    //endpoints.MapFallbackToPage("/_Host");
     endpoints.MapControllers();
 });
 
