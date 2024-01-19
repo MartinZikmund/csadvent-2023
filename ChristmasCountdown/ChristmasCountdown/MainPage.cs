@@ -46,16 +46,19 @@ public sealed partial class MainPage : Page
 
     private void OnTick()
     {
-        var christmasDay = new DateTime(DateTime.Now.Year, 12, 25);
-        var timeUntilChristmas = christmasDay - DateTime.Now;
+        var now = DateTime.Now;
+        var christmasDay = new DateTime(now.Year, 12, 25);
+        var boxingDay = christmasDay.AddDays(1);
 
-        if (timeUntilChristmas.TotalSeconds <= 0)
+        if (christmasDay <= now && now < boxingDay)
         {
             _countdownText.Text = "Merry Christmas!";
-            _timer.Stop();
         }
         else
         {
+            int year = now >= boxingDay ? now.Year + 1 : now.Year;
+            var timeUntilChristmas = new DateTime(year, 12, 25) - now;
+
             _countdownText.Text =
                 $"{timeUntilChristmas.Days} days" + Environment.NewLine +
                 $"{timeUntilChristmas.Hours} hours" + Environment.NewLine +
